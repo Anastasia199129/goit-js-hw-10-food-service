@@ -1,8 +1,7 @@
 import './sass/main.scss';
-import marcupCardsTpl from './templates/marcup-cards.hbs';
-import menu from './menu.json';
-
-// console.log(marcupCardsTpl(menu));
+// import marcupCardsTpl from './templates/marcup-cards.hbs';
+import menu from './js/menu.json';
+console.log(menu);
 
 const input = document.querySelector('.theme-switch__toggle');
 const Theme = {
