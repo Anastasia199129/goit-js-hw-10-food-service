@@ -1,5 +1,5 @@
 import './sass/main.scss';
-// import marcupCardsTpl from './templates/marcup-cards.hbs';
+import marcupCardsTpl from './templates/marcup-cards.hbs';
 import menu from './menu.json';
 
 // console.log(marcupCardsTpl(menu));
