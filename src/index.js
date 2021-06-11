@@ -12,6 +12,7 @@ const Theme = {
 
 document.body.classList.add(Theme.LIGHT);
 
+input.addEventListener('change', onInputChange);
 const onInputChange = event => {
   event.preventDefault();
   const darkTheme = document.body.classList.contains(Theme.DARK);
@@ -45,5 +46,3 @@ function keepsSwitch(value) {
   }
 }
 keepsSwitch(localStorageTheme);
-
-changesTheme = input.addEventListener('change', onInputChange);
