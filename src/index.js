@@ -1,25 +1,19 @@
 import './sass/main.scss';
 import marcupCardsTpl from './templates/marcup-cards.hbs';
 import menu from '/menu.json';
-console.log(menu);
-console.log(marcupCardsTpl(menu));
-
-const mainMenu = menu.map(marcupCardsTpl).join('');
-console.log(mainMenu);
-const ul = document.querySelector('.js-menu');
-ul.insertAdjacentHTML('afterbegin', mainMenu);
-console.log(ul);
-
-// console.log(createCardsMenu(menu));
-
+// console.log(menu);
+// console.log(marcupCardsTpl(menu));
+const list = document.querySelector('.js-menu');
 const input = document.querySelector('.theme-switch__toggle');
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
 
-document.body.classList.add(Theme.LIGHT);
+const creatMarkupMenu = menu.map(marcupCardsTpl).join('');
+list.insertAdjacentHTML('afterbegin', creatMarkupMenu);
 
+document.body.classList.add(Theme.LIGHT);
 input.addEventListener('change', onInputChange);
 
 function onInputChange(event) {
@@ -44,10 +38,7 @@ function keepsTheme() {
     return document.body.classList.add(localStorage.getItem('theme'));
   }
 }
-
 keepsTheme();
-
-const localStorageTheme = localStorage.getItem('theme');
 
 function keepsSwitch(value) {
   if (value === Theme.LIGHT) {
@@ -57,4 +48,5 @@ function keepsSwitch(value) {
   }
 }
 
+const localStorageTheme = localStorage.getItem('theme');
 keepsSwitch(localStorageTheme);
